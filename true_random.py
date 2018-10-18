@@ -52,24 +52,8 @@ while chosen_len == -1:
     chosen_len = validate_num(input("Length of random string: "))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+for current_string_index in range(1, chosen_max + 1):
+    true_random = ""
+    for current_char_index in range(1, chosen_len + 1):
+        true_random += "".join(secrets.choice(string.ascii_letters + string.digits + string.punctuation))
+    print(true_random, "\n")
