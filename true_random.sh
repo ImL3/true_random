@@ -7,16 +7,16 @@ import secrets
 def validate_options(options):
     options = options.replace(" ", "").upper()
     if len(options) > 3:
-        print("[Error] You can't choose more than 3 options!")
+        print("[ERROR] You can't choose more than 3 options!")
         return -1
 
     for option in options:
         if option != 'A' and option != 'B' and option != 'C':
-            print(f"[Error] {option} is an invalid option!")
+            print(f"[ERROR] {option} is an invalid option!")
             return -1
 
         if options.count(option) > 1:
-            print(f"[Error] You can't repeat options!'")
+            print("[ERROR] You can't repeat options!'")
             return -1
 
     return options
@@ -77,4 +77,5 @@ for current_string_index in range(0, chosen_max):
     true_random = ""
     for current_char_index in range(0, chosen_len):
         true_random += "".join(secrets.choice(filtered_string))
-    print(true_random, "\n")
+    print(f"{true_random}\n")
+
